@@ -21,6 +21,15 @@ logreg.fit(X_train, y_train)
 y_pred_class = logreg.predict(X_test)
 print metrics.accuracy_score(y_test, y_pred_class)
 
+# Calculating null accuracy
+# y_test.value_counts() - Gives number of zeroes and ones
+# y_test.mean()	- Percentage of ones
+# 1 - y_test.mean() - Percentage of zeroes
+# Null_accuracy = max(y_test.mean(), 1 - y_test.mean())
+
+# Calculating confusion matrix
+print(metrics.confusion_matrix(y_test, y_pred_class))
+
 # Metrics computed from confusion matrix
 
 # Senstivity
@@ -34,10 +43,3 @@ print metrics.accuracy_score(y_test, y_pred_class)
 
 # Precision
 # TP/(TP + FP)
-# Calculating null accuracy
-# y_test.value_counts() - Gives number of zeroes and ones
-# y_test.mean()	- Percentage of ones
-# 1 - y_test.mean() - Percentage of zeroes
-# Null_accuracy = max(y_test.mean(), 1 - y_test.mean())
-
-print(metrics.confusion_matrix(y_test, y_pred_class))
