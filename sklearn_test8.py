@@ -52,3 +52,10 @@ plt.show()
 print(grid.best_score_)
 print(grid.best_params_)
 print(grid.best_estimator_)
+
+# Best parameter found to be n_neighors = 13
+# Predicting using this paramter
+knn = KNeighborsClassifier(n_neighbors=13)
+knn.fit(X,y)
+
+print(knn.predict([3,5,4,2]))
